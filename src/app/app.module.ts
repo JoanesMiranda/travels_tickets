@@ -8,6 +8,7 @@ import { SharedModule } from './shared/shared.module';
 import { HomeComponent } from './pages/home/home.component';
 import { CreateComponent } from './pages/create/create.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import {MatToolbarModule} from '@angular/material/toolbar'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    SharedModule
+    SharedModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
