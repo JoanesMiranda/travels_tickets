@@ -1,0 +1,58 @@
+.cards{
+    display:inline-flex;
+    margin: 1vh 1vw;
+    
+}
+    
+
+.card-container{
+    background: rgb(246, 246, 247);
+    width: 1200px;
+    min-height: 600px;
+    margin-right: 32px;
+    padding: 56px;
+    border: 1px solid rgb(197, 192, 192);
+    border-radius: 10px;
+    box-shadow: 3px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.card-container h1{
+    font-size: 64px;
+
+}
+
+.card-login{
+    background:  rgb(246, 246, 247);
+    width:200px ;
+    max-height: 200px;;
+    padding: 20px;
+    border: 1px solid rgb(197, 192, 192);
+    border-radius: 8px;
+    border-radius: 10px;
+    box-shadow: 3px 2px 2px 1px rgba(0, 0, 0, 0.2);
+   
+}
+.card-login *{
+    margin-top: 20px;
+}
+
+.card-login input{
+    height: 28px;
+    border-radius: 10px;
+    padding-left:10px ;
+}
+
+.card-login button{
+    justify-content: flex-end;
+    cursor: pointer;
+    padding: 4px 10px;
+    border-radius: 10px;
+    background: rgb(217, 183, 245);
+    transition: ease-in-out 200ms;
+}
+
+.card-login button:hover{
+    background: rgb(232, 211, 250);
+}
+
+
