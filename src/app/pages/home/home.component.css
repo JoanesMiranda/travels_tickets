@@ -41,17 +41,14 @@
     padding-left:10px ;
 }
 
-.card-login button{
-    justify-content: flex-end;
-    cursor: pointer;
-    padding: 4px 10px;
-    border-radius: 10px;
-    background: rgb(217, 183, 245);
-    transition: ease-in-out 200ms;
-}
+button {
+    display: flex;
+    margin-left: auto;
+  }
+  
 
 .card-login button:hover{
-    background: rgb(232, 211, 250);
+    background: rgb(117, 119, 235);
 }
 
 
