@@ -1,14 +1,33 @@
+.register {
+    max-width:900px;
+    max-height: 256px;
+    padding: 50PX;
+    margin: 0 auto;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  button {
+    display: flex;
+    margin-top: 16px;
+    margin-left: auto;
+  }
+  
+/* ######## */
+
 .cards{
     display:inline-flex;
     margin: 1vh 1vw;
-    
 }
     
 
 .card-container{
-    background: rgb(246, 246, 247);
-    width: 1200px;
-    min-height: 600px;
+    background: white ;
+    max-width: 1200px;
+    height: 600px;
     margin-right: 32px;
     padding: 56px;
     border: 1px solid rgb(197, 192, 192);
@@ -19,36 +38,6 @@
 .card-container h1{
     font-size: 64px;
 
-}
-
-.card-login{
-    background:  rgb(246, 246, 247);
-    width:200px ;
-    max-height: 200px;;
-    padding: 20px;
-    border: 1px solid rgb(197, 192, 192);
-    border-radius: 10px;
-    box-shadow: 3px 2px 2px 1px rgba(0, 0, 0, 0.2);
-   
-}
-.card-login *{
-    margin-top: 20px;
-}
-
-.card-login input{
-    height: 28px;
-    border-radius: 10px;
-    padding-left:10px ;
-}
-
-button {
-    display: flex;
-    margin-left: auto;
-  }
-  
-
-.card-login button:hover{
-    background: rgb(117, 119, 235);
 }
 
 
