@@ -2,24 +2,24 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
-import { MatTableDataSource, MatTableItem } from './mat-table-datasource';
+import { ProfileTableDataSource, Voo } from './profile-table-datasource';
 
 @Component({
-  selector: 'app-mat-table',
-  templateUrl: './mat-table.component.html',
-  styleUrls: ['./mat-table.component.css']
+  selector: 'app-profile-table',
+  templateUrl: './profile-table.component.html',
+  styleUrls: ['./profile-table.component.css']
 })
-export class MatTableComponent implements AfterViewInit, OnInit {
+export class ProfileTableComponent implements AfterViewInit, OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  @ViewChild(MatTable) table: MatTable<MatTableItem>;
-  dataSource: MatTableDataSource;
+  @ViewChild(MatTable) table: MatTable<Voo>;
+  dataSource: ProfileTableDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name'];
+  displayedColumns = ['id', 'companhia', 'saida','chegada', 'data', 'origem','destino', 'preco'];
 
   ngOnInit() {
-    this.dataSource = new MatTableDataSource();
+    this.dataSource = new ProfileTableDataSource();
   }
 
   ngAfterViewInit() {

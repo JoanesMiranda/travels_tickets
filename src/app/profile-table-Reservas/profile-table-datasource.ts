@@ -5,42 +5,38 @@ import { map } from 'rxjs/operators';
 import { Observable, of as observableOf, merge } from 'rxjs';
 
 // TODO: Replace this with your own data model type
-export interface MatTableItem {
-  name: string;
+export interface Voo {
   id: number;
+  companhia: string;
+  saida:string;
+  chegada:string;
+  data:string;
+  origem:string;
+  destino:string;
+  preco:string;
 }
 
 // TODO: replace this with real data from your application
-const EXAMPLE_DATA: MatTableItem[] = [
-  {id: 1, name: 'Hydrogen'},
-  {id: 2, name: 'Helium'},
-  {id: 3, name: 'Lithium'},
-  {id: 4, name: 'Beryllium'},
-  {id: 5, name: 'Boron'},
-  {id: 6, name: 'Carbon'},
-  {id: 7, name: 'Nitrogen'},
-  {id: 8, name: 'Oxygen'},
-  {id: 9, name: 'Fluorine'},
-  {id: 10, name: 'Neon'},
-  {id: 11, name: 'Sodium'},
-  {id: 12, name: 'Magnesium'},
-  {id: 13, name: 'Aluminum'},
-  {id: 14, name: 'Silicon'},
-  {id: 15, name: 'Phosphorus'},
-  {id: 16, name: 'Sulfur'},
-  {id: 17, name: 'Chlorine'},
-  {id: 18, name: 'Argon'},
-  {id: 19, name: 'Potassium'},
-  {id: 20, name: 'Calcium'},
+const RESERVAS: Voo[] = [
+  {id: 1, companhia: 'Latam', saida:'15/11/2020', chegada:'15/11/2020', data:'02/11/2020', origem:'Recife', destino:'Fortaleza',preco:'R$1200'},
+  {id: 1, companhia: 'Azul', saida:'05/11/2020', chegada:'05/11/2020', data:'30/10/2020', origem:'Recife', destino:'Salvador',preco:'R$900'},
+  {id: 1, companhia: 'Latam', saida:'18/11/2020', chegada:'18/11/2020', data:'03/11/2020', origem:'Recife', destino:'Petrolina',preco:'R$1500'},
+  {id: 1, companhia: 'Cruzeiro', saida:'15/11/2020', chegada:'15/11/2020', data:'12/11/2020', origem:'Recife', destino:'Maceio',preco:'R$750'},
+  {id: 1, companhia: 'Latam', saida:'25/11/2020', chegada:'25/11/2020', data:'03/11/2020', origem:'Recife', destino:'Fortaleza',preco:'R$1000'},
+  {id: 1, companhia: 'Azul', saida:'10/11/2020', chegada:'10/11/2020', data:'01/11/2020', origem:'Recife', destino:'Salvador',preco:'R$900'},
+  {id: 1, companhia: 'Latam', saida:'13/11/2020', chegada:'13/11/2020', data:'28/10/2020', origem:'Recife', destino:'Joao Pessoa',preco:'R$1300'},
+  {id: 1, companhia: 'Latam', saida:'11/11/2020', chegada:'11/11/2020', data:'21/10/2020', origem:'Recife', destino:'Fortaleza',preco:'R$1100'},
+  {id: 1, companhia: 'Latam', saida:'25/11/2020', chegada:'25/11/2020', data:'03/11/2020', origem:'Recife', destino:'Brasilia',preco:'R$850'},
+  {id: 1, companhia: 'Latam', saida:'15/11/2020', chegada:'15/11/2020', data:'02/11/2020', origem:'Recife', destino:'Fortaleza',preco:'R$400'},
 ];
 
 /**
- * Data source for the MatTable view. This class should
+ * Data source for the ProfileTable view. This class should
  * encapsulate all logic for fetching and manipulating the displayed data
  * (including sorting, pagination, and filtering).
  */
-export class MatTableDataSource extends DataSource<MatTableItem> {
-  data: MatTableItem[] = EXAMPLE_DATA;
+export class ProfileTableDataSource extends DataSource<Voo> {
+  data: Voo[] = RESERVAS;
   paginator: MatPaginator;
   sort: MatSort;
 
@@ -53,7 +49,7 @@ export class MatTableDataSource extends DataSource<MatTableItem> {
    * the returned stream emits new items.
    * @returns A stream of the items to be rendered.
    */
-  connect(): Observable<MatTableItem[]> {
+  connect(): Observable<Voo[]> {
     // Combine everything that affects the rendered data into one update
     // stream for the data-table to consume.
     const dataMutations = [
@@ -77,7 +73,7 @@ export class MatTableDataSource extends DataSource<MatTableItem> {
    * Paginate the data (client-side). If you're using server-side pagination,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getPagedData(data: MatTableItem[]) {
+  private getPagedData(data: Voo[]) {
     const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
     return data.splice(startIndex, this.paginator.pageSize);
   }
@@ -86,7 +82,7 @@ export class MatTableDataSource extends DataSource<MatTableItem> {
    * Sort the data (client-side). If you're using server-side sorting,
    * this would be replaced by requesting the appropriate data from the server.
    */
-  private getSortedData(data: MatTableItem[]) {
+  private getSortedData(data: Voo[]) {
     if (!this.sort.active || this.sort.direction === '') {
       return data;
     }
@@ -94,8 +90,16 @@ export class MatTableDataSource extends DataSource<MatTableItem> {
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
-        case 'name': return compare(a.name, b.name, isAsc);
+        case 'companhia': return compare(a.companhia, b.companhia, isAsc);
         case 'id': return compare(+a.id, +b.id, isAsc);
+        case 'saida': return compare(a.saida, b.saida, isAsc);
+        case 'chegada': return compare(a.chegada, b.chegada, isAsc);
+        case 'data': return compare(a.data, b.data, isAsc);
+        case 'origem': return compare(a.origem, b.origem, isAsc);
+        case 'destino': return compare(a.destino, b.destino, isAsc);
+        case 'preco': return compare(a.preco, b.preco, isAsc);
+
+
         default: return 0;
       }
     });

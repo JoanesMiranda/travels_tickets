@@ -1,20 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {MatTableComponent} from '../../mat-table/mat-table.component';
 import { ProfileRoutingModule } from './profile-routing.module';
 import { ProfileComponent } from './profile.component';
-import { MatTableModule } from '@angular/material/table';
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
+import {ProfileTableModule} from '../../profile-table-Reservas/profile-table.module';
+import {ProfileTableComprasModule} from '../../profile-table-compras/profile-table-compras.module';
+import { ProfileImageModule } from './profile-image/profile-image.module';
 
 @NgModule({
-  declarations: [ProfileComponent,MatTableComponent],
+  declarations: [ProfileComponent],
   imports: [
     CommonModule,
     ProfileRoutingModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
+    ProfileTableModule,
+    ProfileTableComprasModule,
+    ProfileImageModule
   ]
 })
 export class ProfileModule { }

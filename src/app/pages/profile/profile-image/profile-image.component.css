@@ -1,0 +1,16 @@
+.profile-img{
+    max-width:100%;
+    height: auto;
+    margin-left: 0;
+    align-self: initial;
+}
+.details{
+    display: inline;
+}
+
+aside{
+    float:right;
+}
+
+
+
