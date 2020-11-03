@@ -1,21 +1,25 @@
-.padding-form{
-  margin: 20px;
-}
-
-.register {
+.padding-form {
   max-width: 900px;
-  padding: 50PX;
   margin: 0 auto;
-  margin-top: 100px;
+  padding: 20PX;
+  margin-bottom: 40px;
 }
 
-form {
+.padding-form .register {
+  padding: 50PX;
+}
+
+.padding-form .register form {
   display: flex;
-  margin-top: 40px;
   flex-direction: column;
+  margin-top: 40px;
 }
 
-button {
+.padding-form .register button {
   display: flex;
   margin-left: auto;
+}
+
+ button:hover {
+  background-color:#483D8B;
 }
