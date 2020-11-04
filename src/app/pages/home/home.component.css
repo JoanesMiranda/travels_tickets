@@ -1,8 +1,14 @@
+
+html {
+  /* a cada 1rem será considera 10px */
+  font-size: 62.5%;
+}
+
 .register {
-    max-width:900px;
-    max-height: 256px;
+    max-width: 220px;
+    max-height: 230px;
     padding: 50PX;
-    margin: 0 auto;
+    margin: 1.3vh auto;
   }
   
   form {
@@ -15,13 +21,12 @@
     margin-top: 16px;
     margin-left: auto;
   }
-  
-/* ######## */
 
-.cards{
+  .cards{
     display:flex;
     margin: 0 auto;
-    max-width: 970px;
+    width: 95%;
+    max-width: 1000px;
     margin-top: 20px;
   
 }
@@ -29,9 +34,9 @@
 
 .card-container{
     background: white ;
-    max-width: 1200px;
-    height: 600px;
-    margin-right: 32px;
+    max-width: 900px;
+    height: 700px;
+    margin-right: 24px;
     padding: 56px;
     border: 1px solid rgb(197, 192, 192);
     border-radius: 10px;
@@ -44,17 +49,56 @@
 }
 
 
-@media screen and (max-width:700px){
+
+  
+/* ######## */
+@media (max-width:910px){
+
+  .card-container h1{
+    font-size: 40px;
+    line-height: 70px;
+}
+  
+  }
+
+
+@media (max-width:700px){
+  .cards{
+    display:flex;
+    flex-direction: column
+}
 
   .card-container{
- display: none;
-}
-.register {
-  max-width:900px;
-  max-height: 256px;
-  padding: 50PX;
+  max-height: 20px;
+  height: 20px;
+  max-width: 220px;
+  padding: 10px;
   margin: 0 auto;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.card-container h1{
+  
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  
+}
+
+
+  /* .card-container{
+ display: none;
+} */
+.register {
+  max-width:220px;
+  max-height: 230px;
+  padding: 50PX;
+  margin: 1.2vh auto;
   text-align: center;
 }
   
   }
+
+  
