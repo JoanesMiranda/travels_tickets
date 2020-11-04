@@ -1,24 +1,41 @@
-<mat-card class="register mat-elevation-z4">
-  <mat-card-title>Cadastrar Usuario</mat-card-title>
-  <form>
-    <mat-form-field>
-      <input type="text" matInput placeholder="Nome">
-    </mat-form-field>
-    <mat-form-field>
-      <input type="text" matInput placeholder="Avatar_Url">
-    </mat-form-field>
-    <mat-form-field>
-      <input type="text" matInput placeholder="CPF">
-    </mat-form-field>
-    <mat-form-field>
-      <input type="date" matInput placeholder="Data de nascimento">
-    </mat-form-field>
-    <mat-form-field>
-      <input type="password" matInput placeholder="Password">
-    </mat-form-field>
-    <mat-form-field>
-      <input type="password" matInput placeholder="Repetir password">
-    </mat-form-field>
-  </form>
-  <button mat-raised-button color="primary">Cadastrar</button>
-</mat-card>
+<div class="padding-form">
+  <mat-card class="register mat-elevation-z4">
+    <mat-card-title>Cadastrar Usuario</mat-card-title>
+    <form [formGroup]="formCadastroLogin">
+      <mat-form-field>
+        <input type="text" id="name" formControlName="name" matInput placeholder="Nome">
+        <mat-error *ngIf="formCadastroLogin.get('name').errors">O campo nome não pode ficar vazio</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input type="text" formControlName="avatar_url" matInput placeholder="Avatar_Url">
+        <mat-error *ngIf="formCadastroLogin.get('name').errors">O campo avatar_url não pode ficar vazio</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input type="text" formControlName="cpf" matInput placeholder="CPF" mask="000.000.000-00">
+        <mat-error *ngIf="formCadastroLogin.get('name').errors">O campo cpf não pode ficar vazio</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input type="date" formControlName="data_nascimento" matInput placeholder="Data de nascimento">
+        <mat-error *ngIf="formCadastroLogin.get('name').errors">O campo data de nascimento não pode ficar vazio
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input type="password" formControlName="password" matInput placeholder="Password">
+        <mat-error *ngIf="formCadastroLogin.get('name').errors">O campo password não pode ficar vazio</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input type="password" formControlName="repetir_password" matInput placeholder="Repetir password">
+        <mat-error *ngIf="formCadastroLogin.get('name').errors">O campo repetir password não pode ficar vazio
+        </mat-error>
+      </mat-form-field>
+
+    </form>
+    <button mat-raised-button color="primary" (click)="acessar()">Cadastrar</button>
+    <!-- <button [disabled]="!formCadastroLogin.valid" mat-raised-button color="primary" (click)="acessar()">Cadastrar</button> -->
+  </mat-card>
+</div>

@@ -19,8 +19,11 @@
 /* ######## */
 
 .cards{
-    display:inline-flex;
-    margin: 1vh 1vw;
+    display:flex;
+    margin: 0 auto;
+    max-width: 970px;
+    margin-top: 20px;
+  
 }
     
 
@@ -37,7 +40,21 @@
 
 .card-container h1{
     font-size: 64px;
-
+    line-height: 70px;
 }
 
 
+@media screen and (max-width:700px){
+
+  .card-container{
+ display: none;
+}
+.register {
+  max-width:900px;
+  max-height: 256px;
+  padding: 50PX;
+  margin: 0 auto;
+  text-align: center;
+}
+  
+  }

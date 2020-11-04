@@ -14,7 +14,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+
 import { SearchTicketsComponent } from './pages/search-tickets/search-tickets.component';
+
+import { ReactiveFormsModule } from "@angular/forms";
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+
+
 
 @NgModule({
   declarations: [
@@ -34,7 +40,9 @@ import { SearchTicketsComponent } from './pages/search-tickets/search-tickets.co
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule,
+    NgxMaskModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
