@@ -49,6 +49,7 @@ import { ProfileImageModule } from './pages/profile/profile-image/profile-image.
     ProfileTableComprasModule,
     ProfileImageModule
   ],
+  exports:[RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })

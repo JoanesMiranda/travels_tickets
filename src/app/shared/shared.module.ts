@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import {HeaderComponent} from '../shared/components/header/header.component';
 import {FooterComponent} from '../shared/components/footer/footer.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -12,8 +12,11 @@ import {MatToolbarModule} from '@angular/material/toolbar';
   declarations: [HeaderComponent,FooterComponent],
   imports: [
     CommonModule,
-    MatToolbarModule
+    MatToolbarModule,
+    RouterModule
   ],
-  exports:[HeaderComponent,FooterComponent]
+  exports:[HeaderComponent,
+    FooterComponent,
+    RouterModule]
 })
 export class SharedModule { }
