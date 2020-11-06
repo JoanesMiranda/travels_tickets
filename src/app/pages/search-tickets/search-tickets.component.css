@@ -1,0 +1,35 @@
+.padding-form {
+    display: flex;
+    max-width: 970px;
+    margin: 0 auto;
+    padding: 20PX;
+    margin-bottom: 40px;
+}
+.padding-form .register {
+  padding: 50PX;
+  margin: 0 auto;
+}
+
+.mat-form-field + .mat-form-field {
+    margin-left: 8px;
+}
+.title-list{
+  margin-bottom:  20px;
+}
+
+.padding-form .btn-search {
+    display: flex;
+    margin-left: auto;
+}
+
+  button:hover {
+    background-color:#483D8B;
+}
+
+  .table-tickets {
+      margin-top: 20px;
+}
+
+table {
+   width: 100%;
+}
