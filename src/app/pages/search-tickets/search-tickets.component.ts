@@ -1,22 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-export interface PeriodicElement {
-  companhia: string;
-  saida: string;
-  data: string;
-  chegada: string;
-  origem: string;
-  destino: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  { companhia: 'Gol', saida: 'Hydrogen', data: 'dsds', chegada: 'H', origem: 'indo', destino: 'vindo' },
-  { companhia: 'Gol', saida: 'Hydrogen', data: 'sfsfs', chegada: 'H', origem: 'indo', destino: 'vindo' },
-  { companhia: 'Gol', saida: 'Hydrogen', data: 'sfsfs', chegada: 'H', origem: 'indo', destino: 'vindo' },
-  { companhia: 'Gol', saida: 'Hydrogen', data: 'sfsfs', chegada: 'H', origem: 'indo', destino: 'vindo' },
-  { companhia: 'Gol', saida: 'Hydrogen', data: 'sfsfs', chegada: 'H', origem: 'indo', destino: 'vindo' },
-  { companhia: 'Gol', saida: 'Hydrogen', data: 'sfsfs', chegada: 'H', origem: 'indo', destino: 'vindo' },
-];
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-search-tickets',
@@ -24,13 +7,21 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./search-tickets.component.css']
 })
 export class SearchTicketsComponent implements OnInit {
-
-  displayedColumns: string[] = ['companhia', 'saida', 'data', 'chegada', 'origem', 'destino', 'ações'];
-  dataSource = ELEMENT_DATA;
-
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  formSearchTickets = new FormGroup({
+    origem: new FormControl('', [Validators.required]),
+    destino: new FormControl('', Validators.required),
+    quant_pessoas: new FormControl('', Validators.required),
+    data: new FormControl('', Validators.required),
+  })
+
+  acessar() {
+    console.log(this.formSearchTickets.invalid);
+  }
+
 
 }

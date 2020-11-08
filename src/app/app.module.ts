@@ -17,6 +17,8 @@ import { MatTableModule } from '@angular/material/table';
 import { SearchTicketsComponent } from './pages/search-tickets/search-tickets.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { NgxMaskModule, IConfig } from 'ngx-mask';
     ReactiveFormsModule,
     NgxMaskModule.forRoot(),
     MatTableModule,
+    MatGridListModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
