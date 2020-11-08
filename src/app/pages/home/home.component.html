@@ -1,17 +1,20 @@
 <div class="cards">
-    <div class="card-container">
+    <div class="card-container mat-elevation-z4">
         <h1>Bem vindo a Travels Tickets!</h1>
     </div>
-    <div class="card-login">
-        <!-- <p>Email:</p> -->
-        <input type="email" placeholder="Insira seu email">
-        <!-- <p>Senha</p> -->
-        <input type="password" placeholder="Password">
-        <!-- <p></p> -->
-        <button type="button">Entrar</button>
-        <p>
-        </p>
-        <a routerLink="/create">Cadastrar usuario!</a><br>
-        <a href="">Forget password!</a>
-    </div>
+    <mat-card class="register mat-elevation-z4">
+        <mat-card-title>Login</mat-card-title>
+        <form>
+            <mat-form-field>
+                <input type="text" matInput placeholder="Email">
+            </mat-form-field>
+            <mat-form-field>
+                <input type="password" matInput placeholder="Password">
+            </mat-form-field>
+            <a routerLink="/create">Cadastrar usuario!</a><br>
+            <a href="">Forget password!</a>
+        </form>
+        <button mat-raised-button color="primary">login</button>
+    </mat-card>
+    
 </div>
