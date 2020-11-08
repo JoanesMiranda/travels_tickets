@@ -14,9 +14,9 @@ export class ProfileTableComponent implements AfterViewInit, OnInit {
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatTable) table: MatTable<Voo>;
   dataSource: ProfileTableDataSource;
-
+  titulo='Reservas'
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'companhia', 'saida','chegada', 'data', 'origem','destino', 'preco'];
+  displayedColumns = ['numero', 'companhia', 'saida','chegada', 'data', 'origem','destino', 'preco','comprar'];
 
   ngOnInit() {
     this.dataSource = new ProfileTableDataSource();

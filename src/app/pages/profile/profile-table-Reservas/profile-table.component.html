@@ -1,10 +1,10 @@
 <div class="mat-elevation-z8">
-  <caption><h1>Reservas</h1></caption> 
+  <caption><h1>Reservas</h1></caption>
   <table mat-table class="full-width-table" matSort aria-label="Elements">
-    <!-- Id Column -->
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
-      <td mat-cell *matCellDef="let row">{{row.id}}</td>
+    <!-- numero Column -->
+    <ng-container matColumnDef="numero">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Numero</th>
+      <td mat-cell *matCellDef="let row">{{row.numero}}</td>
     </ng-container>
 
     <!-- Companhia Column -->
@@ -46,6 +46,15 @@
       <td mat-cell *matCellDef="let row">{{row.preco}}</td>
     </ng-container>
 
+    <!-- Comprar Column -->
+    <ng-container matColumnDef="comprar">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header><strong>Incluir</strong></th>
+      <td mat-cell *matCellDef="let row"><button mat-mini-fab>
+        <mat-icon>shop</mat-icon>
+      </button></td>
+    </ng-container>
+
+
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
@@ -53,7 +62,7 @@
   <mat-paginator #paginator
       [length]="dataSource?.data.length"
       [pageIndex]="0"
-      [pageSize]="1"
-      [pageSizeOptions]="[1]">
+      [pageSize]="3"
+      [pageSizeOptions]="[10]">
   </mat-paginator>
 </div>

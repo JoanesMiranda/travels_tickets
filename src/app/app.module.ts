@@ -21,13 +21,15 @@ import { CommonModule } from '@angular/common';
 import {ProfileTableModule} from './pages/profile/profile-table-Reservas/profile-table.module';
 import {ProfileTableComprasModule} from './pages/profile/profile-table-compras/profile-table-compras.module';
 import { ProfileImageModule } from './pages/profile/profile-image/profile-image.module';
+import { FavoritadosComponent } from './pages/favoritados/favoritados.component';
 
 @NgModule({
   declarations: [AppComponent,
     SearchTicketsComponent,
     CreateComponent,
     HomeComponent,
-    ProfileComponent
+    ProfileComponent,
+    FavoritadosComponent
   ],
   imports: [
     CommonModule,

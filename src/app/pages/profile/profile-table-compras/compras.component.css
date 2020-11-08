@@ -1,5 +1,20 @@
 .full-width-table {
   width: 100%;
-  align-self: initial;
-  margin-left:0;
+  margin:0 auto;
+}
+mat-icon{
+  color:black;
+  background-color:whitesmoke;
+}
+
+.mat-mini-fab{
+  background-color: whitesmoke;
+}
+
+.mat-elevation-z8{
+  align-self: center;
+}
+
+caption{
+  padding: 15px;
 }

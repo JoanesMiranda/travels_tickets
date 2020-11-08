@@ -16,7 +16,7 @@ export class ComprasComponent implements AfterViewInit, OnInit {
   dataSource: ComprasDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'companhia', 'saida','chegada', 'data', 'origem','destino', 'preco'];
+  displayedColumns = ['numero', 'companhia', 'saida','chegada', 'data', 'origem','destino', 'preco','cancelar'];
 
   ngOnInit() {
     this.dataSource = new ComprasDataSource();

@@ -6,7 +6,7 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 
 // TODO: Replace this with your own data model type
 export interface Voo {
-  id: number;
+  numero: number;
   companhia: string;
   saida:string;
   chegada:string;
@@ -14,15 +14,16 @@ export interface Voo {
   origem:string;
   destino:string;
   preco:string;
+  cancelar:string
 }
 
 // TODO: replace this with real data from your application
 const COMPRAS: Voo[] = [
-  {id: 1, companhia: 'Latam', saida:'15/11/2020', chegada:'15/11/2020', data:'02/11/2020', origem:'Recife', destino:'Fortaleza',preco:'R$1200'},
-  {id: 1, companhia: 'Azul', saida:'05/11/2020', chegada:'05/11/2020', data:'30/10/2020', origem:'Recife', destino:'Salvador',preco:'R$900'},
-  {id: 1, companhia: 'Latam', saida:'18/11/2020', chegada:'18/11/2020', data:'03/11/2020', origem:'Recife', destino:'Petrolina',preco:'R$1500'},
-  {id: 1, companhia: 'Cruzeiro', saida:'15/11/2020', chegada:'15/11/2020', data:'12/11/2020', origem:'Recife', destino:'Maceio',preco:'R$750'},
-  {id: 1, companhia: 'Latam', saida:'25/11/2020', chegada:'25/11/2020', data:'03/11/2020', origem:'Recife', destino:'Fortaleza',preco:'R$1000'},
+  {numero: 1, companhia: 'Latam', saida:'15/11/2020', chegada:'15/11/2020', data:'02/11/2020', origem:'Recife', destino:'Fortaleza',preco:'R$1200',cancelar:''},
+  {numero: 2, companhia: 'Azul', saida:'05/11/2020', chegada:'05/11/2020', data:'30/10/2020', origem:'Recife', destino:'Salvador',preco:'R$900',cancelar:''},
+  {numero: 3, companhia: 'Latam', saida:'18/11/2020', chegada:'18/11/2020', data:'03/11/2020', origem:'Recife', destino:'Petrolina',preco:'R$1500',cancelar:''},
+  {numero: 4, companhia: 'Cruzeiro', saida:'15/11/2020', chegada:'15/11/2020', data:'12/11/2020', origem:'Recife', destino:'Maceio',preco:'R$750',cancelar:''},
+  {numero: 5, companhia: 'Latam', saida:'25/11/2020', chegada:'25/11/2020', data:'03/11/2020', origem:'Recife', destino:'Fortaleza',preco:'R$1000',cancelar:''},
   
 ];
 
@@ -87,14 +88,14 @@ export class ComprasDataSource extends DataSource<Voo> {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
         case 'companhia': return compare(a.companhia, b.companhia, isAsc);
-        case 'id': return compare(+a.id, +b.id, isAsc);
+        case 'numero': return compare(+a.numero, +b.numero, isAsc);
         case 'saida': return compare(a.saida, b.saida, isAsc);
         case 'chegada': return compare(a.chegada, b.chegada, isAsc);
         case 'data': return compare(a.data, b.data, isAsc);
         case 'origem': return compare(a.origem, b.origem, isAsc);
         case 'destino': return compare(a.destino, b.destino, isAsc);
         case 'preco': return compare(a.preco, b.preco, isAsc);
-
+        case 'cancelar': return compare(a.cancelar, b.cancelar, isAsc);
         default: return 0;
       }
     });

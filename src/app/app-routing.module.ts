@@ -4,6 +4,7 @@ import { CreateComponent } from './pages/create/create.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { CommonModule } from '@angular/common';
+import { FavoritadosComponent } from './pages/favoritados/favoritados.component';
 const routes: Routes = [
   {
     path:"",
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path:"profile",
     component:ProfileComponent
+  },
+  {
+    path:"favoritados",
+    component:FavoritadosComponent
   },
   
 ];
