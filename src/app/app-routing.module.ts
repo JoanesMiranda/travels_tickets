@@ -4,6 +4,8 @@ import { CreateComponent } from './pages/create/create.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SearchTicketsComponent } from './pages/search-tickets/search-tickets.component';
+import { CommonModule } from '@angular/common';
+import { FavoritadosComponent } from './pages/favoritados/favoritados.component';
 
 const routes: Routes = [
   {
@@ -22,11 +24,16 @@ const routes: Routes = [
     path: "search",
     component: SearchTicketsComponent
   },
+  {
+    path: "favoritados",
+    component: FavoritadosComponent
+  },
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [CommonModule,
+    RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
