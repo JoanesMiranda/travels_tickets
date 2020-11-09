@@ -1,3 +1,6 @@
+.geral{
+    margin: 0 auto;
+}
 app-profile-image{
     margin-left: 10px;
     display: flex;
