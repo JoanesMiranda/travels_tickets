@@ -1,0 +1,21 @@
+.table {
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 30px;
+  margin-bottom: 8vh;
+  background-color: #ffffff;
+  margin-top: 3vh;
+}
+
+.table .mat-card-title{
+  margin-left: 60px;
+}
+
+.full-width-table {
+  width: 100%;
+  padding: 50px;
+}
+
+
+
+
