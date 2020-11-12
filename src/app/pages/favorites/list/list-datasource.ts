@@ -9,6 +9,7 @@ export interface ListItem {
   name: string;
   id?: number;
   trecho?: string;
+  delete?:string;
 }
 
 // TODO: replace this with real data from your application
@@ -19,20 +20,6 @@ const EXAMPLE_DATA: ListItem[] = [
   {id: 4, name: 'GOL', trecho:'MCZ/JP'},
   {id: 5, name: 'GOL', trecho:'MCZ/JP'},
   {id: 6, name: 'LATAM', trecho:'MCZ/JP'},
-  {id: 7, name: 'Nitrogen'},
-  {id: 8, name: 'Oxygen'},
-  {id: 9, name: 'Fluorine'},
-  {id: 10, name: 'Neon'},
-  {id: 11, name: 'Sodium'},
-  {id: 12, name: 'Magnesium'},
-  {id: 13, name: 'Aluminum'},
-  {id: 14, name: 'Silicon'},
-  {id: 15, name: 'Phosphorus'},
-  {id: 16, name: 'Sulfur'},
-  {id: 17, name: 'Chlorine'},
-  {id: 18, name: 'Argon'},
-  {id: 19, name: 'Potassium'},
-  {id: 20, name: 'Calcium'},
 ];
 
 /**

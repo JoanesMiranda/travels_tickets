@@ -19,7 +19,7 @@ const routes: Routes = [
     component:ProfileComponent
   },
   {
-    path:"favorit/list",
+    path:"favorites/list",
     component:ListComponent
   },
   
