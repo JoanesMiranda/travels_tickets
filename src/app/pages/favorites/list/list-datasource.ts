@@ -6,20 +6,28 @@ import { Observable, of as observableOf, merge } from 'rxjs';
 
 // TODO: Replace this with your own data model type
 export interface ListItem {
-  name: string;
-  id?: number;
-  trecho?: string;
-  delete?:string;
+  id: number;
+  airline: string;
+  saida:string;
+  hour:string;
+  flightStretch:string;
+  preco:string;
+  delete:string;
+  comprar:string
 }
 
 // TODO: replace this with real data from your application
-const EXAMPLE_DATA: ListItem[] = [
-  {id: 1, name: 'LATAM', trecho:'REC/SSA'},
-  {id: 2, name: 'GOL', trecho:'RJ/SP'},
-  {id: 3, name: 'Azul', trecho:'MCZ/JP'},
-  {id: 4, name: 'GOL', trecho:'MCZ/JP'},
-  {id: 5, name: 'GOL', trecho:'MCZ/JP'},
-  {id: 6, name: 'LATAM', trecho:'MCZ/JP'},
+const DATA: ListItem[] = [
+  {id: 1, airline: 'Latam', saida:'15/11/2020', hour:'7:30', flightStretch:'REC/SSA',preco:'R$1200',delete:'',comprar:''},
+  {id: 2, airline: 'Azul', saida:'05/11/2020', hour:'11:30', flightStretch:'MCZ/SSA',preco:'R$900',delete:'',comprar:''},
+  {id: 3, airline: 'Latam', saida:'18/11/2020', hour:'19:30', flightStretch:'SP/RJ',preco:'R$1500',delete:'',comprar:''},
+  {id: 4, airline: 'Cruzeiro', saida:'15/11/2020', hour:'12:30', flightStretch:'Rec/MCZ',preco:'R$750',delete:'',comprar:''},
+  {id: 5, airline: 'Latam', saida:'25/11/2020', hour:'22:30', flightStretch:'SP/RJ',preco:'R$1000',delete:'',comprar:''},
+  {id: 6, airline: 'Gol', saida:'15/11/2020', hour:'15:30', flightStretch:'REC/SSA',preco:'R$1200',delete:'',comprar:''},
+  {id: 7, airline: 'Gol', saida:'05/11/2020', hour:'20:30', flightStretch:'Rec/Mcz',preco:'R$900',delete:'',comprar:''},
+  {id: 8, airline: 'Latam', saida:'18/11/2020', hour:'6:00', flightStretch:'SP/RJ',preco:'R$1500',delete:'',comprar:''},
+  {id: 9, airline: 'Azul', saida:'15/11/2020', hour:'7:30', flightStretch:'REC/SP',preco:'R$750',delete:'',comprar:''},
+  {id: 10, airline: 'Latam', saida:'25/11/2020', hour:'18:30', flightStretch:'REC/RN',preco:'R$1000',delete:'',comprar:''},
 ];
 
 /**
@@ -28,7 +36,7 @@ const EXAMPLE_DATA: ListItem[] = [
  * (including sorting, pagination, and filtering).
  */
 export class ListDataSource extends DataSource<ListItem> {
-  data: ListItem[] = EXAMPLE_DATA;
+  data: ListItem[] = DATA;
   paginator: MatPaginator;
   sort: MatSort;
 
@@ -82,8 +90,13 @@ export class ListDataSource extends DataSource<ListItem> {
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
-        case 'name': return compare(a.name, b.name, isAsc);
+        case 'airline': return compare(a.airline, b.airline, isAsc);
         case 'id': return compare(+a.id, +b.id, isAsc);
+        case 'saida': return compare(a.saida, b.saida, isAsc);
+        case 'hour': return compare(a.hour, b.hour, isAsc);
+        case 'flightStretch': return compare(a.flightStretch, b.flightStretch, isAsc);
+        case 'preco': return compare(a.preco, b.preco, isAsc);
+        case 'delete': return compare(a.delete, b.delete, isAsc);
         default: return 0;
       }
     });
