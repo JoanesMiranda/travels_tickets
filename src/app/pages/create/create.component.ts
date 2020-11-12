@@ -14,12 +14,12 @@ export class CreateComponent implements OnInit {
   }
 
   formCadastroLogin = new FormGroup({
-    name: new FormControl('', [Validators.required]),
-    avatar_url: new FormControl('', Validators.required),
+    name: new FormControl('', Validators.required),
     cpf: new FormControl('', Validators.required),
-    data_nascimento: new FormControl('', Validators.required),
-    password: new FormControl('', [Validators.required, Validators.minLength(10)]),
-    repetir_password: new FormControl('', [Validators.required, Validators.minLength(10)]),
+    email: new FormControl('', Validators.required),
+    login: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required),
+    repetir_password: new FormControl('', Validators.required),
   })
 
   acessar() {

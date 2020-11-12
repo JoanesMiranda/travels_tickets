@@ -13,7 +13,7 @@ export class SearchTicketsComponent implements OnInit {
   }
 
   formSearchTickets = new FormGroup({
-    origem: new FormControl('', [Validators.required]),
+    origem: new FormControl('', Validators.required),
     destino: new FormControl('', Validators.required),
     quant_pessoas: new FormControl('', Validators.required),
     data: new FormControl('', Validators.required),
