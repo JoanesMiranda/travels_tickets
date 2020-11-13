@@ -25,6 +25,8 @@ import { ProfileTableModule } from './pages/profile/profile-table-Reservas/profi
 import { ProfileTableComprasModule } from './pages/profile/profile-table-compras/profile-table-compras.module';
 import { ProfileImageModule } from './pages/profile/profile-image/profile-image.module';
 import { FavoritadosComponent } from './pages/favoritados/favoritados.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent,
@@ -54,7 +56,9 @@ import { FavoritadosComponent } from './pages/favoritados/favoritados.component'
     RouterModule,
     ProfileTableModule,
     ProfileTableComprasModule,
-    ProfileImageModule
+    ProfileImageModule,
+    MatSnackBarModule,
+    HttpClientModule
   ],
   exports: [RouterModule],
   providers: [],

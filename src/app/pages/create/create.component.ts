@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Create } from './create.model';
+import { CreateService } from './create.service';
 
 @Component({
   selector: 'app-create',
@@ -8,9 +10,27 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class CreateComponent implements OnInit {
 
-  constructor() { }
+  constructor(private createService: CreateService) { }
+
+  user: Create = {
+    nome: '', 
+    cpf: '', 
+    email: '', 
+    login:'', 
+    senha:'',
+  }
+
 
   ngOnInit(): void {
+
+  }
+
+
+  createRegister(): void {
+    this.createService.create(this.user).subscribe(() => {
+      this.createService.showMessage('Cadastro Salvo com sucesso!');
+    });
+
   }
 
   formCadastroLogin = new FormGroup({
