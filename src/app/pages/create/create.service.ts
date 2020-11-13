@@ -15,7 +15,7 @@ export class CreateService {
 
   showMessage(msg: string): void {
     this.snackBar.open(msg, 'X', {
-      duration: 3000,
+      duration: 4000,
       horizontalPosition: "right",
       verticalPosition: "top"
     })
