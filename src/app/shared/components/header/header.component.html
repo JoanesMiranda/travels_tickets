@@ -1,7 +1,7 @@
 <header>
     <div hidden class="container">
         <img src="/assets/img/logo.png" alt="Logo Travels Tickets" />
-        <div class="menu-section">
+        <div class="menu-section" *ngIf="mostrarMenu">
             <nav>
                 <ul>
                     <li>
@@ -23,11 +23,3 @@
             </span> -->
         </div>
     </div>
-</header>
-<!-- <script>
-    const menuSection = document.querySelector(".menu-section")
-    const menuToggle = menuSection.querySelector(".menu-toggle")
-    menuToggle.addEventListener("click", () => {
-        menuSection.classList.add("on")
-    })
-</script> -->

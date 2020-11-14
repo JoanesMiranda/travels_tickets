@@ -17,6 +17,10 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { SearchTicketsComponent } from './pages/search-tickets/search-tickets.component';
 import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { ListComponent } from './pages/favorites/list/list.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { AuthService } from './pages/home/auth.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
@@ -29,13 +33,17 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from '../app/security/token.interceptor';
 
+
 @NgModule({
   declarations: [AppComponent,
     SearchTicketsComponent,
     CreateComponent,
+    ProfileComponent,
+    ListComponent,
     HomeComponent,
     ProfileComponent,
     FavoritadosComponent
+
   ],
   imports: [
     CommonModule,
@@ -52,18 +60,20 @@ import { TokenInterceptor } from '../app/security/token.interceptor';
     MatButtonModule,
     NgxMaskModule.forRoot(),
     MatTableModule,
-    MatGridListModule,
-    MatIconModule,
-    RouterModule,
-    ProfileTableModule,
-    ProfileTableComprasModule,
-    ProfileImageModule,
+    MatPaginatorModule,
+    MatSortModule,
+    HttpClientModule,
     MatSnackBarModule,
-    HttpClientModule
-
+    HttpClientModule,
+    ProfileImageModule,
+    ProfileTableComprasModule,
+    ProfileTableModule,
+    MatGridListModule,
+    MatIconModule
   ],
+
   exports: [RouterModule],
-  providers: [
+  providers: [AuthService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,

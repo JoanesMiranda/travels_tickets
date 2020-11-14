@@ -1,19 +1,21 @@
 <div class="cards">
-    <div class="card-container mat-elevation-z4">
+    <!-- <div class="card-container mat-elevation-z4">
         <h1>Bem vindo a Travels Tickets!</h1>
-    </div>
+    </div> -->
     <mat-card class="register mat-elevation-z4">
         <mat-card-title>Login</mat-card-title>
         <form>
             <mat-form-field>
-                <input type="text" matInput placeholder="Email">
+                <input name="usuario" type="text" matInput placeholder="Email" [(ngModel)]="login.usuario">
+                <label for="usuario" class="active"></label>
             </mat-form-field>
             <mat-form-field>
-                <input type="password" matInput placeholder="Password">
+                <input name="senha" type="password" matInput placeholder="Password" [(ngModel)]="login.senha">
+                <label for="senha" class="active"></label>
             </mat-form-field>
             <a routerLink="/create">Cadastrar usuario!</a><br>
             <a href="">Forget password!</a>
         </form>
-        <button mat-raised-button color="primary">login</button>
+        <button mat-raised-button color="primary" type="submit" name="action" (click)="fazerLogin()">login</button>
     </mat-card>
 </div>

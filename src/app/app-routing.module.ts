@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CreateComponent } from './pages/create/create.component';
+import { ListComponent } from './pages/favorites/list/list.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SearchTicketsComponent } from './pages/search-tickets/search-tickets.component';
 import { CommonModule } from '@angular/common';
-import { FavoritadosComponent } from './pages/favoritados/favoritados.component';
 
 const routes: Routes = [
   {
@@ -21,13 +21,15 @@ const routes: Routes = [
     component: ProfileComponent
   },
   {
+
+    path: "favorites/list",
+    component: ListComponent
+  },
+  {
     path: "search",
     component: SearchTicketsComponent
   },
-  {
-    path: "favoritados",
-    component: FavoritadosComponent
-  },
+
 
 ];
 
