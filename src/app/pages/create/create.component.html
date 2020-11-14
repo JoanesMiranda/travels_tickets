@@ -3,39 +3,45 @@
     <mat-card-title>Cadastrar Usuario</mat-card-title>
     <form [formGroup]="formCadastroLogin">
       <mat-form-field>
-        <input type="text" id="name" formControlName="name" matInput placeholder="Nome">
+        <input type="text" formControlName="name" matInput placeholder="Nome" [(ngModel)]="user.nome" name="nome">
         <mat-error *ngIf="formCadastroLogin.get('name').errors">O campo nome não pode ficar vazio</mat-error>
       </mat-form-field>
 
       <mat-form-field>
-        <input type="text" formControlName="avatar_url" matInput placeholder="Avatar_Url">
-        <mat-error *ngIf="formCadastroLogin.get('name').errors">O campo avatar_url não pode ficar vazio</mat-error>
+        <input type="number" formControlName="cpf" matInput placeholder="cpf"
+          [(ngModel)]="user.cpf" name="cpf">
+        <mat-error *ngIf="formCadastroLogin.get('cpf').errors">O campo cpf não pode ficar vazio</mat-error>
       </mat-form-field>
 
       <mat-form-field>
-        <input type="text" formControlName="cpf" matInput placeholder="CPF" mask="000.000.000-00">
-        <mat-error *ngIf="formCadastroLogin.get('name').errors">O campo cpf não pode ficar vazio</mat-error>
-      </mat-form-field>
-
-      <mat-form-field>
-        <input type="date" formControlName="data_nascimento" matInput placeholder="Data de nascimento">
-        <mat-error *ngIf="formCadastroLogin.get('name').errors">O campo data de nascimento não pode ficar vazio
+        <input type="email" formControlName="email" matInput placeholder="E-mail" [(ngModel)]="user.email"
+          name="email">
+        <mat-error *ngIf="formCadastroLogin.get('email').errors">O campo email não pode ficar vazio
         </mat-error>
       </mat-form-field>
 
       <mat-form-field>
-        <input type="password" formControlName="password" matInput placeholder="Password">
-        <mat-error *ngIf="formCadastroLogin.get('name').errors">O campo password não pode ficar vazio</mat-error>
+        <input type="text" formControlName="login" matInput placeholder="Login" [(ngModel)]="user.login"
+          name="login">
+        <mat-error *ngIf="formCadastroLogin.get('login').errors">O campo login não pode ficar vazio
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input type="password" formControlName="password" matInput placeholder="Password" [(ngModel)]="user.senha"
+          name="senha">
+        <mat-error *ngIf="formCadastroLogin.get('password').errors">O campo password não pode ficar vazio</mat-error>
       </mat-form-field>
 
       <mat-form-field>
         <input type="password" formControlName="repetir_password" matInput placeholder="Repetir password">
-        <mat-error *ngIf="formCadastroLogin.get('name').errors">O campo repetir password não pode ficar vazio
+        <mat-error *ngIf="formCadastroLogin.get('repetir_password').errors">O campo repetir password não pode ficar
+          vazio
         </mat-error>
       </mat-form-field>
 
+      <button mat-raised-button color="primary" (click)="createRegister()">Cadastrar</button>
     </form>
-    <button mat-raised-button color="primary" (click)="acessar()">Cadastrar</button>
     <!-- <button [disabled]="!formCadastroLogin.valid" mat-raised-button color="primary" (click)="acessar()">Cadastrar</button> -->
   </mat-card>
 </div>

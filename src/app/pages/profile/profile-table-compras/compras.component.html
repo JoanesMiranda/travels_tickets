@@ -1,0 +1,63 @@
+<div class="mat-elevation-z8">
+  <caption>
+    <h1>Compras</h1>
+  </caption>
+  <table mat-table class="full-width-table" matSort aria-label="Elements">
+    <!-- numero Column -->
+    <ng-container matColumnDef="numero">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Numero</th>
+      <td mat-cell *matCellDef="let row">{{row.numero}}</td>
+    </ng-container>
+
+    <!-- Companhia Column -->
+    <ng-container matColumnDef="companhia">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Companhia</th>
+      <td mat-cell *matCellDef="let row">{{row.companhia}}</td>
+    </ng-container>
+
+    <!-- Saida Column -->
+    <ng-container matColumnDef="saida">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Saida</th>
+      <td mat-cell *matCellDef="let row">{{row.saida}}</td>
+    </ng-container>
+    <!-- Chegada Column -->
+    <ng-container matColumnDef="chegada">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Chegada</th>
+      <td mat-cell *matCellDef="let row">{{row.chegada}}</td>
+    </ng-container>
+
+    <!-- Data Column -->
+    <ng-container matColumnDef="data">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Data</th>
+      <td mat-cell *matCellDef="let row">{{row.data}}</td>
+    </ng-container>
+
+    <!-- Origem Column -->
+    <ng-container matColumnDef="origem">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Origem</th>
+      <td mat-cell *matCellDef="let row">{{row.origem}}</td>
+    </ng-container>
+    <!-- Destino Column -->
+    <ng-container matColumnDef="destino">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Destino</th>
+      <td mat-cell *matCellDef="let row">{{row.destino}}</td>
+    </ng-container>
+    <!-- Preco Column -->
+    <ng-container matColumnDef="preco">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Preco</th>
+      <td mat-cell *matCellDef="let row">{{row.preco}}</td>
+    </ng-container>
+    <!-- Cancelar Column -->
+    <ng-container matColumnDef="cancelar">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header><strong>Cancelar</strong></th>
+      <td mat-cell *matCellDef="let row"><button mat-mini-fab>
+        <mat-icon>delete</mat-icon>
+      </button></td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator #paginator [length]="dataSource?.data.length" [pageIndex]="0" [pageSize]="3" [pageSizeOptions]="[10]">
+  </mat-paginator>
+</div>

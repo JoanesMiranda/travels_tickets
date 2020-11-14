@@ -1,5 +1,5 @@
 {
-  "name": "travels-tickets",
+  "name": "travel-ticket",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -12,12 +12,12 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "~10.2.0",
-    "@angular/cdk": "^10.2.6",
+    "@angular/cdk": "^10.2.7",
     "@angular/common": "~10.2.0",
     "@angular/compiler": "~10.2.0",
     "@angular/core": "~10.2.0",
     "@angular/forms": "~10.2.0",
-    "@angular/material": "^10.2.6",
+    "@angular/material": "^10.2.7",
     "@angular/platform-browser": "~10.2.0",
     "@angular/platform-browser-dynamic": "~10.2.0",
     "@angular/router": "~10.2.0",

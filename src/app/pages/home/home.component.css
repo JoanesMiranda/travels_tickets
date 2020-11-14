@@ -1,41 +1,23 @@
-
 html {
   /* a cada 1rem será considera 10px */
   font-size: 62.5%;
 }
 
 .register {
-    max-width: 220px;
-    max-height: 230px;
-    padding: 50PX;
-    /* margin: 1.3vh auto; */
-  }
-
-  .register a {
-    text-decoration: none;
-  }
-  
-form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-button {
-    display: flex;
-    margin-top: 16px;
-    margin-left: auto;
-  }
-
-
-.cards{
-    display:flex;
-    margin: 0 auto;
-    width: 95%;
-    max-width: 1000px;
-    margin-top: 20px;
-  
+  max-width: 220px;
+  max-height: 230px;
+  padding: 50PX;
+  /* margin: 1.3vh auto; */
 }
-    
+
+.register a {
+  text-decoration: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
 
 .card-container{
     background: white ;
@@ -48,58 +30,63 @@ button {
    
 }
 
-.card-container h1{
-    font-size: 64px;
-    line-height: 70px;
+.cards {
+  display: flex;
+  margin: 0 auto;
+  width: 95%;
+  max-width: 1000px;
+  margin-top: 20px;
 }
 
+.card-container {
+  background: white;
+  max-width: 900px;
+  height: 500px;
+  margin-right: 10px;
+  padding: 56px;
+  border: 1px solid rgb(197, 192, 192);
+  border-radius: 4px;
+}
 
+.card-container h1 {
+  font-size: 64px;
+  line-height: 70px;
+}
 
-  
 /* ######## */
-@media (max-width:910px){
 
-  .card-container h1{
+@media (max-width:910px) {
+  .card-container h1 {
     font-size: 40px;
     line-height: 70px;
-}
-  
   }
+}
 
-
-@media (max-width:700px){
-  .cards{
-    display:flex;
+@media (max-width:700px) {
+  .cards {
+    display: flex;
     flex-direction: column
-}
-
-  .card-container{
-  max-height: 20px;
-  height: 20px;
-  max-width: 220px;
-  padding: 10px;
-  margin: 0 auto;
-  background: none;
-  border: none;
-  box-shadow: none;
-}
-
-.card-container h1{
-  
-  font-size: 16px;
-  line-height: 20px;
-  text-align: center;
-  
-}
-
-.register {
-  max-width:220px;
-  max-height: 230px;
-  padding: 50PX;
-  margin: 1.2vh auto;
-  text-align: center;
-}
-
   }
-
-  
+  .card-container {
+    max-height: 20px;
+    height: 20px;
+    max-width: 220px;
+    padding: 10px;
+    margin: 0 auto;
+    background: none;
+    border: none;
+    box-shadow: none;
+  }
+  .card-container h1 {
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+  }
+  .register {
+    max-width: 220px;
+    max-height: 230px;
+    padding: 50PX;
+    margin: 1.2vh auto;
+    text-align: center;
+  }
+}

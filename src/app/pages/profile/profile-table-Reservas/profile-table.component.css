@@ -1,0 +1,20 @@
+.full-width-table {
+  width: 100%;
+  margin:0 auto;
+}
+
+.mat-elevation-z8{
+  margin-bottom: 30px;
+  align-self: center;
+}
+
+.mat-mini-fab{
+  color:blue;
+  background-color:whitesmoke;
+}
+
+caption{
+  padding: 15px;
+}
+
+
