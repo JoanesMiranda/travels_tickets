@@ -31,7 +31,7 @@ import { ProfileImageModule } from './pages/profile/profile-image/profile-image.
 import { FavoritadosComponent } from './pages/favoritados/favoritados.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { TokenInterceptor } from '../app/security/token.interceptor';
+import { InterceptorService } from '../app/security/interceptor.service';
 
 
 @NgModule({
@@ -73,10 +73,11 @@ import { TokenInterceptor } from '../app/security/token.interceptor';
   ],
 
   exports: [RouterModule],
-  providers: [AuthService,
+  providers: [
+    AuthService,
     {
       provide: HTTP_INTERCEPTORS,
-      useClass: TokenInterceptor,
+      useClass: InterceptorService,
       multi: true
     }
   ],

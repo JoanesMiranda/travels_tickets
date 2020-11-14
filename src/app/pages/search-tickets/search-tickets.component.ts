@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Search } from './search.model';
+
 import { SearchService } from './search.service';
 
 @Component({
@@ -21,21 +22,21 @@ export class SearchTicketsComponent implements OnInit {
     max: '',
     originCode: '',
     returnDate: '',
-
   }
 
   flightsLists: Search[];
 
 
   ngOnInit(): void {
-
   }
 
   searchVoos(): void {
     if (this.formSearchTickets.valid) {
       this.seachService.flightsList(this.search).subscribe(flightsList => {
         this.flightsLists = flightsList;
-        console.log(flightsList);
+        console.log(this.flightsLists);
+      }, (err) => {
+        this.seachService.showMessage("Erro ao listar dados de passagens, tente novamente...");
       });
     }
   }
@@ -48,7 +49,6 @@ export class SearchTicketsComponent implements OnInit {
     num_max_resultados: new FormControl('', Validators.required),
     origem: new FormControl('', Validators.required),
     retorno: new FormControl('', Validators.required),
-
   })
 
   /*

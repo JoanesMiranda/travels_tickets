@@ -30,4 +30,9 @@ export class AuthService {
     return this.http.post<Login>(this.baseUrl, dataUser);
   }
 
+  getToken() {
+    const { token } = JSON.parse(localStorage.getItem('token'));
+    return token;
+  }
+
 }
