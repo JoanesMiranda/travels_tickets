@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Search } from './search.model';
+import { SearchService } from './search.service';
 
 @Component({
   selector: 'app-search-tickets',
@@ -7,21 +9,53 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./search-tickets.component.css']
 })
 export class SearchTicketsComponent implements OnInit {
-  constructor() { }
+
+  constructor(private seachService: SearchService) { }
+
+
+  search: Search = {
+    adults: '',
+    currencyCode: '',
+    departureDate: '',
+    destinationCode: '',
+    max: '',
+    originCode: '',
+    returnDate: '',
+
+  }
+
+  flightsLists: Search[];
+
 
   ngOnInit(): void {
+
+  }
+
+  searchVoos(): void {
+    if (this.formSearchTickets.valid) {
+      this.seachService.flightsList(this.search).subscribe(flightsList => {
+        this.flightsLists = flightsList;
+        console.log(flightsList);
+      });
+    }
   }
 
   formSearchTickets = new FormGroup({
-    origem: new FormControl('', Validators.required),
+    numero_adultos: new FormControl('', Validators.required),
+    moeda_pagamento: new FormControl('', Validators.required),
+    data_ida: new FormControl('', Validators.required),
     destino: new FormControl('', Validators.required),
-    quant_pessoas: new FormControl('', Validators.required),
-    data: new FormControl('', Validators.required),
+    num_max_resultados: new FormControl('', Validators.required),
+    origem: new FormControl('', Validators.required),
+    retorno: new FormControl('', Validators.required),
+
   })
 
+  /*
   acessar() {
     console.log(this.formSearchTickets.invalid);
   }
+  */
 
 
 }

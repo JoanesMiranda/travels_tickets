@@ -19,11 +19,10 @@ export class CreateService {
       horizontalPosition: "right",
       verticalPosition: "top"
     })
-
   }
 
   create(user: Create): Observable<Create> {
-    return this.http.post<Create>(this.baseUrl, user);
+    return this.http.post<Create>(this.baseUrl, user)
   }
 
 }

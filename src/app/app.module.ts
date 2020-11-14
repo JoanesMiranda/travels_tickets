@@ -26,7 +26,8 @@ import { ProfileTableComprasModule } from './pages/profile/profile-table-compras
 import { ProfileImageModule } from './pages/profile/profile-image/profile-image.module';
 import { FavoritadosComponent } from './pages/favoritados/favoritados.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { TokenInterceptor } from '../app/security/token.interceptor';
 
 @NgModule({
   declarations: [AppComponent,
@@ -59,9 +60,16 @@ import { HttpClientModule } from '@angular/common/http';
     ProfileImageModule,
     MatSnackBarModule,
     HttpClientModule
+
   ],
   exports: [RouterModule],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

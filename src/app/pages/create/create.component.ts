@@ -35,6 +35,7 @@ export class CreateComponent implements OnInit {
     }
   }
 
+
   formCadastroLogin = new FormGroup({
     name: new FormControl('', Validators.required),
     cpf: new FormControl('', Validators.required),
@@ -42,7 +43,7 @@ export class CreateComponent implements OnInit {
     login: new FormControl('', Validators.required),
     password: new FormControl('', Validators.required),
     repetir_password: new FormControl('', Validators.required),
-    
+
   })
 
   /*
