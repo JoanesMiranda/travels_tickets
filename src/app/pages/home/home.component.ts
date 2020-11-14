@@ -1,6 +1,9 @@
+import { Route } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from './auth.service';
-import { Usuario } from './usuario';
+import { Login } from './home.model';
+
 
 @Component({
   selector: 'app-home',
@@ -9,17 +12,29 @@ import { Usuario } from './usuario';
 })
 export class HomeComponent implements OnInit {
 
+  constructor(private router: Router, private authService: AuthService) { }
 
- usuario: Usuario = new Usuario();
+  login: Login = {
 
-  constructor(private authService: AuthService) { }
+    senha: '',
+    usuario: ''
+  }
 
   ngOnInit() {
   }
 
   fazerLogin() {
-    this.authService.fazerLogin(this.usuario)
+    this.authService.signig(this.login).subscribe(resLogin => {
 
+      if (resLogin) {
+        this.router.navigate(['/profile']);
+
+        localStorage.setItem("token", JSON.stringify(resLogin));
+
+      } else {
+        console.log("DEU MERDA")
+      }
+    });
   }
 
 }

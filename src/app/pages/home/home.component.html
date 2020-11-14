@@ -6,13 +6,11 @@
         <mat-card-title>Login</mat-card-title>
         <form>
             <mat-form-field>
-                <input [(ngModel)]="usuario.nome" id="usuario" name="login"class="validate" type="text" matInput
-                    placeholder="Email">
+                <input name="usuario" type="text" matInput placeholder="Email" [(ngModel)]="login.usuario">
                 <label for="usuario" class="active"></label>
             </mat-form-field>
             <mat-form-field>
-                <input  [(ngModel)]="usuario.senha" name="senha"id="senha" class="validate" type="password" matInput
-                    placeholder="Password">
+                <input name="senha" type="password" matInput placeholder="Password" [(ngModel)]="login.senha">
                 <label for="senha" class="active"></label>
             </mat-form-field>
             <a routerLink="/create">Cadastrar usuario!</a><br>

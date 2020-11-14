@@ -22,6 +22,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { AuthService } from './pages/home/auth.service';
+import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
+
 
 @NgModule({
   declarations: [
@@ -47,6 +51,8 @@ import { AuthService } from './pages/home/auth.service';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    HttpClientModule,
+    MatSnackBarModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
