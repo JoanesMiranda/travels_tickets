@@ -26,15 +26,19 @@ export class HomeComponent implements OnInit {
   fazerLogin() {
     this.authService.signig(this.login).subscribe(resLogin => {
 
-      if (resLogin) {
+    
         this.router.navigate(['/profile']);
 
         localStorage.setItem("token", JSON.stringify(resLogin));
 
-      } else {
-        console.log("DEU MERDA")
-      }
+    },(err) => {
+     this.authService.showMessage("Usuário ou senha Invalido");  
     });
   }
 
 }
+
+// .subscribe(
+//   (res) => {},
+//   (err) => {}
+//   )
