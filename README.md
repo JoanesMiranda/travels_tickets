@@ -7,8 +7,6 @@
   <a href="#projeto">Projeto</a>&nbsp;&nbsp;&nbsp;
 </p>
 
-<br>
-
 ## Demo
 
 Go to <a href="#">TravelTickets</a>
@@ -55,9 +53,9 @@ Foi utilizado o o metodo agil <a href="https://www.atlassian.com/br/agile/kanban
 
 <br/>
 
-Equipe| Primeira Semana | ---- |
------ | ---- | ---- | ---- |
------  | Tarefa | Status |
+Team Seven| Primeira Semana | Sprint 1
+----- | ---- | ----
+Nome  | Tarefa | Status
 Joanes, Brynner, Robson |Reunião da Equipe |  100%
 Joanes Souto  | Criação das Issues e divisão de Tarefas |100%| 
 Joanes Souto  | Organização da estrutura de desenvolvimento | 100%| 
@@ -73,9 +71,9 @@ Robson Antas | Compartilhar uma passagem integrada  | 0% |
 
 ```
 ```
-Equipe| Segunda Semana | ---- |
------ | ---- | ---- | ---- |
------  | Tarefa | Status |
+Team Seven| Segunda Semana | Sprint 2
+----- | ---- | ----
+nome  | Tarefa | Status 
 Joanes, Brynner, Robson |Reunião da Equipe |  100%
 Joanes Souto | Criação da página de cadastro do usuário  | 80% |
 Joanes Souto | Criação da Página de busca de passagens aéreas  | 60% 
@@ -87,9 +85,9 @@ Robson Antas | Página de Exibição de favoritos  | 0% |
 Robson Antas | Compartilhar uma passagem integrada  | 0% |
 ```
 ```
-Equipe| Terceira Semana | ---- |
------ | ---- | ---- | ---- |
------  | Tarefa | Status |
+Team Seven| Terceira Semana | Sprint 3 
+----- | ---- | ----
+Nome  | Tarefa | Status 
 Joanes, Brynner, Robson |Reunião da Equipe |  100%
 Joanes Souto | Criação da página de cadastro do usuário / Validação dos campos de Formulário  | 90% |
 Joanes Souto | Criação da Página de busca de passagens aéreas  | 70% |
@@ -101,9 +99,9 @@ Robson Antas | Página de Exibição de favoritos  | 0% |
 Robson Antas | Compartilhar uma passagem integrada  | 0% | 
 ```
 ```
-Equipe| Quarta Semana | ---- |
------ | ---- | ---- | ---- |
------  | Tarefa | Status |
+Team Seven| Quarta Semana | Sprint 4
+----- | ---- | ---- 
+Nome  | Tarefa | Status 
 Joanes, Brynner, Robson |Reunião da Equipe |  100%
 Joanes Souto | Criação da página de cadastro do usuário / Integração com a API  | 100% |
 Joanes Souto | Criação da Página de busca de passagens aéreas / Integração com a API  | 60% | 
