@@ -24,8 +24,7 @@ export class SearchTicketsComponent implements OnInit {
     returnDate: '',
   }
 
-  flightsLists: Search[];
-
+  flightsLists: Object[];
 
   ngOnInit(): void {
   }
@@ -33,7 +32,7 @@ export class SearchTicketsComponent implements OnInit {
   searchVoos(): void {
     if (this.formSearchTickets.valid) {
       this.seachService.flightsList(this.search).subscribe(flightsList => {
-        this.flightsLists = flightsList;
+        this.flightsLists = flightsList.data;
         console.log(this.flightsLists);
       }, (err) => {
         this.seachService.showMessage("Erro ao listar dados de passagens, tente novamente...");

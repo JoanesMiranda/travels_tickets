@@ -22,7 +22,7 @@ export class SearchService {
     })
   }
 
-  flightsList(search: Search): Observable<Search[]> {
+  flightsList(search: Search): Observable<any> {
     return this.http.post<Search[]>(this.baseUrl, search);
   }
 
