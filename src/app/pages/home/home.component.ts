@@ -1,4 +1,5 @@
 import { Route } from '@angular/compiler/src/core';
+import { EventEmitter } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from './auth.service';
@@ -14,6 +15,9 @@ export class HomeComponent implements OnInit {
 
   constructor(private router: Router, private authService: AuthService) { }
 
+
+  mostrarMenuEmitter = new EventEmitter<boolean>();
+
   login: Login = {
 
     senha: '',
@@ -26,17 +30,20 @@ export class HomeComponent implements OnInit {
   fazerLogin() {
     this.authService.signig(this.login).subscribe(resLogin => {
 
-    
-        this.router.navigate(['/profile']);
 
-        localStorage.setItem("token", JSON.stringify(resLogin));
+      this.router.navigate(['/profile']);
 
-    },(err) => {
-     this.authService.showMessage("Usuário ou senha Invalido");  
+      localStorage.setItem("token", JSON.stringify(resLogin));
+      
+
+    }, (err) => {
+      this.authService.showMessage("Usuário ou senha Invalido");
+
     });
   }
 
 }
+
 
 // .subscribe(
 //   (res) => {},

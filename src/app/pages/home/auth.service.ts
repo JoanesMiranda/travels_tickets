@@ -21,6 +21,7 @@ export class AuthService {
   mostrarMenuEmitter = new EventEmitter<boolean>();
 
   constructor(private http: HttpClient, private snackbar: MatSnackBar) { }
+  
   showMessage(msg: string): void {
 
     this.snackbar.open(msg, 'X', {
@@ -34,13 +35,9 @@ export class AuthService {
   signig(dataUser: Login): Observable<Login> {
     return this.http.post<Login>(this.baseUrl, dataUser);
   }
-
+ 
 
 }
-
-
-
-
 
 // fazerLogin(usuario: Login) {
 //   if (usuario.nome === 'bryner' &&

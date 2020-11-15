@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from './pages/home/auth.service';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,7 +10,7 @@ import { AuthService } from './pages/home/auth.service';
 export class AppComponent {
   title = 'travels-tickets';
 
-  mostrarMenu: boolean = false
+  mostrarMenu: boolean = true
 
   constructor(private authService: AuthService) {
 

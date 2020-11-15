@@ -7,11 +7,13 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { SearchTicketsComponent } from './pages/search-tickets/search-tickets.component';
 import { CommonModule } from '@angular/common';
 import { FavoritadosComponent } from './pages/favoritados/favoritados.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
     path: "",
-    component: HomeComponent
+    component: HomeComponent,
+    
   },
   {
     path: "create",
@@ -19,16 +21,19 @@ const routes: Routes = [
   },
   {
     path: "profile",
-    component: ProfileComponent
+    component: ProfileComponent,
+    canActivate:[AuthGuard]
   },
   {
 
     path: "favorites/list",
-    component: ListComponent
+    component: ListComponent,
+    canActivate:[AuthGuard]
   },
   {
     path: "search",
-    component: SearchTicketsComponent
+    component: SearchTicketsComponent,
+    canActivate:[AuthGuard]
   },
 
 
