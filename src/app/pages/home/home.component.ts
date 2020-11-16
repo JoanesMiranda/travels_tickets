@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
     this.authService.signig(this.login).subscribe(resLogin => {
 
 
-      this.router.navigate(['/profile']);
+      // this.router.navigate(['/profile']);
 
       localStorage.setItem("token", JSON.stringify(resLogin));
       
