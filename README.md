@@ -61,6 +61,8 @@ Joanes Souto  | Criação das Issues e divisão de Tarefas |100%|
 Joanes Souto  | Organização da estrutura de desenvolvimento | 100%| 
 Joanes Souto | Criação da página de cadastro do usuário  | 70% |
 Joanes Souto | Criação da Página de busca de passagens aéreas  | 50% |
+Joanes Souto | Organização da Estrutura de Desenvolvimento | 50%|
+Yul Bryner | Organização da Estrutura de Desenvolvimento | 50%|
 Yul Brynner  | Criação de Prototipo do Projeto | 100%| 
 Yul Brynner | Criação do Header e do Footer  | 50% |
 Yul Brynner | Criação da Pagina Inicial  | 50% | 
@@ -77,9 +79,12 @@ nome  | Tarefa | Status
 Joanes, Brynner, Robson |Reunião da Equipe |  100%
 Joanes Souto | Criação da página de cadastro do usuário  | 80% |
 Joanes Souto | Criação da Página de busca de passagens aéreas  | 60% 
-Yul Brynner  | Criação de Prototipo do Projeto | 100%| 
-Yul Brynner | Criação do Header e do Footer  | 50% |
+Joanes Souto | Organização da Estrutura de Desenvolvimento | 100%|
+Yul Bryner | Organização da Estrutura de Desenvolvimento | 100%|
+Yul Brynner | Criação de Prototipo do Projeto | 100%| 
+Yul Brynner | Criação do Header e do Footer  | 70% |
 Yul Brynner | Criação da Pagina Inicial  | 50% | 
+Yul Bryner  | login e logout   | 50%|
 Robson Antas | Criação da página de perfil | 20%| 
 Robson Antas | Página de Exibição de favoritos  | 0% |
 Robson Antas | Compartilhar uma passagem integrada  | 0% |
@@ -92,8 +97,9 @@ Joanes, Brynner, Robson |Reunião da Equipe |  100%
 Joanes Souto | Criação da página de cadastro do usuário / Validação dos campos de Formulário  | 90% |
 Joanes Souto | Criação da Página de busca de passagens aéreas  | 70% |
 Yul Brynner  | Criação de Prototipo do Projeto | 100%| 
-Yul Brynner | Criação do Header e do Footer  | 50% |
-Yul Brynner | Criação da Pagina Inicial  | 50% | 
+Yul Brynner | Criação do Header e do Footer  | 100% |
+Yul Brynner | Criação da Pagina Inicial  | 100% | 
+Yul Bryner  | login e logout   | 80%|
 Robson Antas | Criação da página de perfil | 70%| 
 Robson Antas | Página de Exibição de favoritos  | 0% |
 Robson Antas | Compartilhar uma passagem integrada  | 0% | 
@@ -106,8 +112,9 @@ Joanes, Brynner, Robson |Reunião da Equipe |  100%
 Joanes Souto | Criação da página de cadastro do usuário / Integração com a API  | 100% |
 Joanes Souto | Criação da Página de busca de passagens aéreas / Integração com a API  | 60% | 
 Yul Brynner  | Criação de Prototipo do Projeto | 100%| 
-Yul Brynner | Criação do Header e do Footer  | 50% |
-Yul Brynner | Criação da Pagina Inicial  | 50% | 
+Yul Brynner | Criação do Header e do Footer  | 100% |
+Yul Brynner | Criação da Pagina Inicial  | 100% | 
+Yul Bryner  | login e logout   | 100%|
 Robson Antas | Criação da página de perfil | 70%|
 Robson Antas | Compartilhar uma passagem integrada  | 0% | 
 Robson Antas |Gerar ticket pré-reserva, código de pagamento e link para o pagamento| 0% |
