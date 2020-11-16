@@ -30,7 +30,9 @@ export class HeaderComponent implements OnInit {
   }
 
   logOut(): void {
-    localStorage.removeItem("token")
+    localStorage.removeItem("token");
+    window.location.reload();
+    window.location.href = "/";
   }
 
   liberarAcesso(): void {
@@ -40,7 +42,7 @@ export class HeaderComponent implements OnInit {
     if (!!token) {
 
       this.acesso = true;
-    }else{
+    } else {
       this.acesso = false
     }
 

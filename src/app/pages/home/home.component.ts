@@ -35,6 +35,10 @@ export class HomeComponent implements OnInit {
 
       localStorage.setItem("token", JSON.stringify(resLogin));
       
+      window.location.reload();
+      window.location.href = "/search";
+
+      
 
     }, (err) => {
       this.authService.showMessage("Usuário ou senha Invalido");
