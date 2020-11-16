@@ -16,22 +16,9 @@ export class AuthGuard implements CanActivate {
     private authService: AuthService,
     private router: Router
   ) { }
-
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
-
-
-    const { token } = JSON.parse(localStorage.getItem("token"))
-
-    if (!!token) {
-
-      this.acesso = true;
-    }
-
-    this.router.navigate(["/home"])
-
-    return true;
-
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
+    throw new Error('Method not implemented.');
   }
+
+  
 }
