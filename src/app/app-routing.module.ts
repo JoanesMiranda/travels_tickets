@@ -22,18 +22,18 @@ const routes: Routes = [
   {
     path: "profile",
     component: ProfileComponent,
-    canActivate:[AuthGuard]
+    // canActivate:[AuthGuard]
   },
   {
 
     path: "favorites/list",
     component: ListComponent,
-    canActivate:[AuthGuard]
+    // canActivate:[AuthGuard]
   },
   {
     path: "search",
     component: SearchTicketsComponent,
-    canActivate:[AuthGuard]
+    // canActivate:[AuthGuard]
   },
 
 
