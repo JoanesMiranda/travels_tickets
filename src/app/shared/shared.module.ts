@@ -6,10 +6,6 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from '../app-routing.module';
 
-
-
-
-
 @NgModule({
   declarations: [HeaderComponent, FooterComponent],
   imports: [

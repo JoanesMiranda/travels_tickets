@@ -54,18 +54,8 @@
   width: 50%;
 }
 
-.name-company {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
-img {
+.exit_start{
   display: flex;
-  padding: 10px;
-  width: 100px;
-  height: 100px;
-  align-items: center;
-  justify-content: center;
 }
 

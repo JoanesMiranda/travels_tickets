@@ -1,114 +1,101 @@
 <div class="padding-form">
 
     <mat-card class="register mat-elevation-z4">
-        <mat-card-title>Busca de passagens</mat-card-title>
+        <mat-card-title>Consulta de voos</mat-card-title>
         <form [formGroup]="formSearchTickets">
+
             <mat-form-field>
-                <input type="text" formControlName="origem" matInput placeholder="Origem">
-                <mat-error *ngIf="formSearchTickets.get('origem').errors">O campo origem não pode ficar vazio
+                <input type="number" formControlName="numero_adultos" matInput placeholder="Numero de adultos"
+                    [(ngModel)]="search.adults" name="adults">
+                <mat-error *ngIf="formSearchTickets.get('numero_adultos').errors">O campo não pode ficar vazio
                 </mat-error>
             </mat-form-field>
+
             <mat-form-field>
-                <input type="text" formControlName="destino" matInput placeholder="Destino">
-                <mat-error *ngIf="formSearchTickets.get('destino').errors">O campo destino não pode ficar vazio
+                <input type="text" formControlName="moeda_pagamento" matInput placeholder="Moeda de pagamento"
+                    [(ngModel)]="search.currencyCode" name="currencyCode">
+                <mat-error *ngIf="formSearchTickets.get('moeda_pagamento').errors">O campo não pode ficar vazio
                 </mat-error>
             </mat-form-field>
+
             <mat-form-field>
-                <input type="number" formControlName="quant_pessoas" matInput placeholder="Quant. de pessoas">
-                <mat-error *ngIf="formSearchTickets.get('quant_pessoas').errors">O campo quant. pessoas não pode ficar
-                    vazio
+                <input type="date" formControlName="data_ida" matInput placeholder="Data de ida"
+                    [(ngModel)]="search.departureDate" name="departureDate">
+                <mat-error *ngIf="formSearchTickets.get('data_ida').errors">O campo não pode ficar vazio
                 </mat-error>
             </mat-form-field>
+
             <mat-form-field>
-                <input type="date" formControlName="data" matInput placeholder="Data">
-                <mat-error *ngIf="formSearchTickets.get('data').errors">O campo data não pode ficar vazio</mat-error>
+                <input type="text" formControlName="destino" matInput placeholder="Codigo de destino"
+                    [(ngModel)]="search.destinationCode" name="destinationCode">
+                <mat-error *ngIf="formSearchTickets.get('destino').errors">O campo não pode ficar vazio</mat-error>
             </mat-form-field>
-            <button class="btn-search" mat-raised-button color="primary" (click)="acessar()">Buscar</button>
+
+            <mat-form-field>
+                <input type="number" formControlName="num_max_resultados" matInput placeholder="Numero de resultados"
+                    [(ngModel)]="search.max" name="max">
+                <mat-error *ngIf="formSearchTickets.get('num_max_resultados').errors">O campo não pode ficar vazio
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input type="text" formControlName="origem" matInput placeholder="Codigo de origem"
+                    [(ngModel)]="search.originCode" name="originCode">
+                <mat-error *ngIf="formSearchTickets.get('origem').errors">O campo não pode ficar vazio</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input type="date" formControlName="retorno" matInput placeholder="Data de retorno"
+                    [(ngModel)]="search.returnDate" name="returnDate">
+                <mat-error *ngIf="formSearchTickets.get('retorno').errors">O campo não pode ficar vazio</mat-error>
+            </mat-form-field>
+
+            <button class="btn-search" mat-raised-button color="primary" (click)="searchVoos()">Buscar</button>
         </form>
 
-        <select name="relevance" id="">
-            <option value="mais relevante">Mais Relevantes</option>
-            <option value="maiores preços">Maiores Preços</option>
-            <option value="menores preços">Menores Preços</option>
-        </select>
-
-
-        <mat-card class="card-tickets mat-elevation-z4">
-
+        <mat-card class="card-tickets mat-elevation-z4" *ngFor="let list of flightsLists">
             <div class="title">
-                <mat-card-title> <strong>Voo flexível:</strong>
-                    você poderá alterar a data sem pagar multa</mat-card-title>
-                <mat-icon aria-hidden="false" aria-label="start">star_border</mat-icon>
+                <mat-card-title>
+                    <strong>Intinerarios:</strong>
+                </mat-card-title>
             </div>
             <hr />
-            <mat-card-content>
-                <div>
-                    <strong class="name-company">
-                        Companhia
-                    </strong>
-                    <img src="/assets/logo_gol.png" alt="Companhia" />
+            <mat-card-content *ngFor="let exits of list.itineraries">
+
+                <div *ngFor="let segment of exits.segments">
+                    <div class="exit_start">
+                        <div>
+                            <Strong>Saida:</Strong>
+                            <p>
+                                <strong>Cod. Aeroporto:</strong> {{segment.departure.iataCode}} <br />
+                                <strong>Terminal:</strong> {{segment.departure.terminal}} <br />
+                                <strong>Horario:</strong> {{segment.departure.at | date: 'dd/MM/yyyy hh:mm'}}
+                                &nbsp;<br />
+                            </p>
+                        </div>
+
+                        <div>
+                            <Strong>Chegada:</Strong>
+                            <p>
+                                <strong>Cod. Aeroporto:</strong> {{segment.arrival.iataCode}} <br />
+                                <strong>Terminal:</strong> {{segment.arrival.terminal}} <br />
+                                <strong>Horario:</strong> {{segment.arrival.at | date: 'dd/MM/yyyy hh:mm'}} &nbsp;<br />
+                            </p>
+                            <br />
+                        </div>
+                    </div>
+                    <div>
+                        <p>
+                            <strong>Avião:</strong>{{segment.aircraft.code}} &nbsp;
+                            <strong>Preço: </strong>{{list.price.total}}
+                        </p>
+                    </div>
+                    <br />
+                    <hr />
                 </div>
 
-                <div class="exit">
-                    <p>
-                        <strong>SAIDA: </strong>
-                        <span>seg. 25/07/2020</span><br />
-                        <span><strong>HORA: </strong>19:50 - 2 paradas</span><br />
-                        <strong>ORIGEM:</strong> Campina Grande - PB
-                    </p>
-                </div>
-                <div class="arrival">
-                    <p>
-                        <strong>CHEGADA: </strong>
-                        <span>seg. 25/07/2020</span><br />
-                        <span><strong>HORA: </strong>19:50 - 2 paradas</span><br />
-                        <strong>DESTINO:</strong> Recife - PE
-                    </p>
-                </div>
             </mat-card-content>
-            <mat-card-actions>
-                <button mat-button>Comprar</button>
-                <button mat-button>Reservar</button>
-            </mat-card-actions>
+
         </mat-card>
-
-        <mat-card class="card-tickets mat-elevation-z4">
-            <div class="title">
-                <mat-card-title> <strong>Voo flexível:</strong>
-                    você poderá alterar a data sem pagar multa</mat-card-title>
-                <mat-icon aria-hidden="false" aria-label="start">star_border</mat-icon>
-            </div>
-            <hr />
-            <mat-card-content>
-                <div>
-                    <strong class="name-company">
-                        Companhia
-                    </strong>
-                    <img src="/assets/logo_gol.png" alt="Companhia" />
-                </div>
-
-                <div class="exit">
-                    <p>
-                        <strong>SAIDA: </strong>
-                        <span>seg. 25/07/2020</span><br />
-                        <span><strong>HORA: </strong>19:50 - 2 paradas</span><br />
-                        <strong>ORIGEM:</strong> Campina Grande - PB
-                    </p>
-                </div>
-                <div class="arrival">
-                    <p>
-                        <strong>CHEGADA: </strong>
-                        <span>seg. 25/07/2020</span><br />
-                        <span><strong>HORA: </strong>19:50 - 2 paradas</span><br />
-                        <strong>DESTINO:</strong> Recife - PE
-                    </p>
-                </div>
-            </mat-card-content>
-            <mat-card-actions>
-                <button mat-button>Comprar</button>
-                <button mat-button>Reservar</button>
-            </mat-card-actions>
-        </mat-card>
-
     </mat-card>
 </div>

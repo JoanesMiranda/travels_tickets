@@ -30,7 +30,8 @@ import { ProfileTableComprasModule } from './pages/profile/profile-table-compras
 import { ProfileImageModule } from './pages/profile/profile-image/profile-image.module';
 import { FavoritadosComponent } from './pages/favoritados/favoritados.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { InterceptorService } from '../app/security/interceptor.service';
 
 
 @NgModule({
@@ -63,16 +64,23 @@ import { HttpClientModule } from '@angular/common/http';
     MatSortModule,
     HttpClientModule,
     MatSnackBarModule,
+    HttpClientModule,
     ProfileImageModule,
     ProfileTableComprasModule,
     ProfileTableModule,
     MatGridListModule,
     MatIconModule
   ],
-  providers: [AuthService],
-    
-  exports: [RouterModule],
 
+  exports: [RouterModule],
+  providers: [
+    AuthService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

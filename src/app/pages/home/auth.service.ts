@@ -1,16 +1,12 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { Login } from './home.model';
-// import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-
 @Injectable({
   providedIn: 'root'
 })
-
-
 
 export class AuthService {
 
@@ -28,29 +24,16 @@ export class AuthService {
       duration: 4000,
       horizontalPosition: "right",
       verticalPosition: "top"
-    })
-
+    });
   }
 
   signig(dataUser: Login): Observable<Login> {
     return this.http.post<Login>(this.baseUrl, dataUser);
   }
- 
+
+  getToken() {
+    const { token } = JSON.parse(localStorage.getItem('token'));
+    return token;
+  }
 
 }
-
-// fazerLogin(usuario: Login) {
-//   if (usuario.nome === 'bryner' &&
-//     usuario.senha === '123') {
-
-//     this.usuarioAutenticado = true;
-
-//     this.mostrarMenuEmitter.emit(true);
-
-//     this.router.navigate(['/profile']);
-
-//   } else {
-//     this.usuarioAutenticado = false;
-//     this.mostrarMenuEmitter.emit(false);
-//   }
-// }

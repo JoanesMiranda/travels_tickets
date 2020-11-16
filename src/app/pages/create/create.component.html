@@ -1,14 +1,16 @@
 <div class="padding-form">
   <mat-card class="register mat-elevation-z4">
     <mat-card-title>Cadastrar Usuario</mat-card-title>
+    
     <form [formGroup]="formCadastroLogin">
+
       <mat-form-field>
         <input type="text" formControlName="name" matInput placeholder="Nome" [(ngModel)]="user.nome" name="nome">
         <mat-error *ngIf="formCadastroLogin.get('name').errors">O campo nome não pode ficar vazio</mat-error>
       </mat-form-field>
 
       <mat-form-field>
-        <input type="number" formControlName="cpf" matInput placeholder="cpf"
+        <input type="number" formControlName="cpf" matInput placeholder="CPF"
           [(ngModel)]="user.cpf" name="cpf">
         <mat-error *ngIf="formCadastroLogin.get('cpf').errors">O campo cpf não pode ficar vazio</mat-error>
       </mat-form-field>
@@ -28,13 +30,13 @@
       </mat-form-field>
 
       <mat-form-field>
-        <input type="password" formControlName="password" matInput placeholder="Password" [(ngModel)]="user.senha"
+        <input type="password" formControlName="password" matInput placeholder="Senha" [(ngModel)]="user.senha"
           name="senha">
         <mat-error *ngIf="formCadastroLogin.get('password').errors">O campo password não pode ficar vazio</mat-error>
       </mat-form-field>
 
       <mat-form-field>
-        <input type="password" formControlName="repetir_password" matInput placeholder="Repetir password">
+        <input type="password" formControlName="repetir_password" matInput placeholder="Repetir senha">
         <mat-error *ngIf="formCadastroLogin.get('repetir_password').errors">O campo repetir password não pode ficar
           vazio
         </mat-error>

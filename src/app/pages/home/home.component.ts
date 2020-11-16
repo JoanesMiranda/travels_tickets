@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 import { AuthService } from './auth.service';
 import { Login } from './home.model';
 
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -19,7 +18,6 @@ export class HomeComponent implements OnInit {
   mostrarMenuEmitter = new EventEmitter<boolean>();
 
   login: Login = {
-
     senha: '',
     usuario: ''
   }
