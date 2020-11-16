@@ -15,17 +15,11 @@ export class HeaderComponent implements OnInit {
   acesso: boolean = false
 
   fazerLogin(): void {
-
-
-
-    const { token } = JSON.parse(localStorage.getItem("token"))
-
-    if (!!token) {
-
-      this.mostrarMenu = true;
-      // location.reload()
-      // return;
-
+    if (JSON.parse(localStorage.getItem("token"))) {
+      const { token } = JSON.parse(localStorage.getItem("token"))
+      if (!!token) {
+        this.mostrarMenu = true;
+      }
     }
   }
 
