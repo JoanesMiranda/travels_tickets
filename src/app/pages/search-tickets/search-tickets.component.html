@@ -53,8 +53,6 @@
             <button class="btn-search" mat-raised-button color="primary" (click)="searchVoos()">Buscar</button>
         </form>
 
-        <h2></h2>
-
         <mat-card class="card-tickets mat-elevation-z4" *ngFor="let list of flightsLists">
             <div class="title">
                 <mat-card-title>
@@ -71,7 +69,8 @@
                             <p>
                                 <strong>Cod. Aeroporto:</strong> {{segment.departure.iataCode}} <br />
                                 <strong>Terminal:</strong> {{segment.departure.terminal}} <br />
-                                <strong>Horario:</strong>{{segment.departure.at}} &nbsp;<br />
+                                <strong>Horario:</strong> {{segment.departure.at | date: 'dd/MM/yyyy hh:mm'}}
+                                &nbsp;<br />
                             </p>
                         </div>
 
@@ -80,7 +79,7 @@
                             <p>
                                 <strong>Cod. Aeroporto:</strong> {{segment.arrival.iataCode}} <br />
                                 <strong>Terminal:</strong> {{segment.arrival.terminal}} <br />
-                                <strong>Horario:</strong> {{segment.arrival.at}} &nbsp;<br />
+                                <strong>Horario:</strong> {{segment.arrival.at | date: 'dd/MM/yyyy hh:mm'}} &nbsp;<br />
                             </p>
                             <br />
                         </div>
@@ -92,10 +91,11 @@
                         </p>
                     </div>
                     <br />
-                    <div>
-                    </div>
+                    <hr />
                 </div>
+
             </mat-card-content>
+
         </mat-card>
     </mat-card>
 </div>
